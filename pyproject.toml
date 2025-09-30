@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "fastapi-app"
+version = "0.1.0"
+description = ""
+authors = ["Sanan Maarouf <sanan.adnan97@gmail.com>"]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.9"
+fastapi = "^0.118.0"
+uvicorn = {extras = ["standard"], version = "^0.37.0"}
+
+[tool.poetry.scripts]
+dev = "uvicorn main:app --host 0.0.0.0 --port 8000 --reload"
+start = "uvicorn main:app --host 0.0.0.0 --port 8000"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
