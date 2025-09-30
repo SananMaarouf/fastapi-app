@@ -8,7 +8,7 @@ A simple FastAPI application with Poetry dependency management and dev container
 
 ```bash
 # Easy way (recommended)
-poetry run dev
+make dev
 
 # Or the long way
 poetry run uvicorn main:app --host 0.0.0.0 --port 8000 --reload
@@ -23,13 +23,13 @@ poetry run uvicorn main:app --host 0.0.0.0 --port 8000 --reload
 
 ```bash
 # Development server with auto-reload
-poetry run dev
+make dev
 
 # Production-like server
-poetry run start
+make start
 
 # Install dependencies
-poetry install
+make install
 ```
 
 ### Development Setup
@@ -94,6 +94,7 @@ fastapi-app/
 ├── main.py                 # FastAPI application
 ├── pyproject.toml         # Poetry configuration
 ├── Dockerfile             # Container setup
+├── Makefile              # Build commands
 └── README.md              # This file
 ```
 
@@ -105,7 +106,7 @@ fastapi-app/
 
 **Dependencies not working:**
 ```bash
-poetry install
+make install
 ```
 
 **Container issues:**
