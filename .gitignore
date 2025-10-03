@@ -81,11 +81,3 @@ Desktop.ini
 # dotenv
 .env
 .env.*
-.venv/
-__pycache__/
-*.pyc
-.pytest_cache/
-.coverage
-.mypy_cache/
-__pycache__/*
-__pycache__/main.cpython-312.pyc
