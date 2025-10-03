@@ -13,10 +13,13 @@ WORKDIR /app
 # Copy poetry files first
 COPY pyproject.toml poetry.lock* ./
 
-# Install dependencies (remove --no-root to enable scripts)
+# Configure poetry to not create virtual environment (since we're in a container)
+RUN poetry config virtualenvs.create false
+
+# Install dependencies
 RUN poetry install --no-interaction --no-ansi
 
-# Copy app code
+# Copy app code (excluding .venv if it exists)
 COPY . .
 
 # Expose FastAPI port

@@ -3,6 +3,7 @@
 README.md
 .devcontainer
 .vscode
+.venv/
 __pycache__
 *.pyc
 *.pyo
