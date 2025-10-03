@@ -8,7 +8,13 @@
     "vscode": {
       "extensions": [
         "ms-python.python",
-        "ms-python.vscode-pylance"
+        "ms-python.vscode-pylance",
+        "eamodio.gitlens",
+        "GitHub.copilot-chat",
+        "GitHub.copilot",
+        "ms-azuretools.vscode-containers",
+        "ms-vscode-remote.remote-containers",
+        "tamasfe.even-better-toml"
       ]
     }
   }
