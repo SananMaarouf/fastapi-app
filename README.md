@@ -1,17 +1,19 @@
 # FastAPI App
 
-A simple FastAPI application with Poetry dependency management and dev container setup.
+A simple FastAPI application with Poetry dependency management and Docker Compose setup.
 
 ## Quick Start
 
 ### Running the Application
 
-```bash
-# Easy way (recommended)
-make dev
+You can run the project using Docker Compose (recommended) or the Makefile:
 
-# Or the long way
-poetry run uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+```bash
+# Using Docker Compose (recommended for containerized setup)
+docker compose up
+
+# Using Makefile (alternative for local development)
+make dev
 ```
 
 **Access the app:**
@@ -19,7 +21,9 @@ poetry run uvicorn main:app --host 0.0.0.0 --port 8000 --reload
 - API docs: `http://localhost:8000/docs`
 - Alternative docs: `http://localhost:8000/redoc`
 
-### Available Commands
+### Available Commands (Alternative)
+
+These commands are an alternative to using Docker.
 
 ```bash
 # Development server with auto-reload
@@ -37,16 +41,13 @@ make install
 **First time setup:**
 1. Clone the repository
 2. Open in VS Code: `code .`
-3. When prompted, select "Reopen in Container"
-4. Wait for the dev container to build and install dependencies
+3. Start the app with Docker Compose: `docker compose up --build`
 
-**If dev container doesn't auto-setup:**
-```bash
-# Rebuild dev container manually
-# Ctrl+Shift+P -> "Dev Containers: Rebuild Container"
-```
+The `--build` flag is only needed the first time or when dependencies change.
 
 ### Useful Commands
+
+These commands are for managing Python dependencies with Poetry and are primarily for the alternative (non-Docker) local setup.
 
 ```bash
 # Install new dependencies
@@ -89,13 +90,34 @@ git pull
 
 ```
 fastapi-app/
-├── .devcontainer/          # Dev container configuration
-│   └── devcontainer.json
 ├── main.py                 # FastAPI application
-├── pyproject.toml         # Poetry configuration
-├── Dockerfile             # Container setup
-├── Makefile              # Build commands
-└── README.md              # This file
+├── pyproject.toml          # Poetry configuration
+├── poetry.lock             # Poetry lock file
+├── Dockerfile              # Container setup
+├── docker-compose.yaml     # Docker Compose configuration
+├── Makefile                # Build commands
+└── README.md               # This file
+```
+### Docker Compose Commands
+
+```bash
+# Start services (detached mode)
+docker compose up -d
+
+# Start a specific service
+docker compose up fastapi-app
+
+# Stop all services
+docker compose down
+
+# Rebuild images and start services
+docker compose up --build
+
+# View logs
+docker compose logs
+
+# List running containers
+docker compose ps
 ```
 
 ### Troubleshooting
@@ -110,4 +132,4 @@ make install
 ```
 
 **Container issues:**
-- Rebuild container: Ctrl+Shift+P -> "Dev Containers: Rebuild Container"
+- If containers fail to start, try rebuilding with `docker compose up --build`
