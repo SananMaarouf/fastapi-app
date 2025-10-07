@@ -24,7 +24,8 @@
         "GitHub.copilot",
         "ms-azuretools.vscode-containers",
         "ms-vscode-remote.remote-containers",
-        "ms-vscode.makefile-tools"
+        "ms-vscode.makefile-tools",
+        "eamodio.gitlens"
       ]
     }
   }
