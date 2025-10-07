@@ -7,6 +7,10 @@ __pycache__/main.cpython-312.pyc
 # C extensions
 *.so
 
+# certificate keys
+*.key
+*.csr
+
 # Distribution / packaging
 .Python
 build/
