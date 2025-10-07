@@ -10,6 +10,7 @@ __pycache__/main.cpython-312.pyc
 # certificate keys
 *.key
 *.csr
+*.crt
 
 # Distribution / packaging
 .Python
