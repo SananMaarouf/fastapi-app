@@ -1,0 +1,25 @@
+on: 
+  push:
+    branches:
+      - add-cicd
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Say hello
+        run: echo "Hello, World!"
+
+
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Say another hello
+        run: echo "Hello from build and deploy!"
