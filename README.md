@@ -1,6 +1,8 @@
-# FastAPI App
+# FastAPI App Template
 
-A simple FastAPI application with Poetry dependency management and Docker Compose setup.
+This is my custom template for a dockerized FastAPI application
+that uses Poetry for dependency management.
+It's pretty minimal, yet extensible so you can add the database,reverse-proxy, et cetera, of your choice without much trouble
 
 ## Quick Start
 
